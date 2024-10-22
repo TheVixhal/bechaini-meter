@@ -1,0 +1,127 @@
+html, body {
+    height: 100%; /* Ensure full height for centering */
+    margin: 0; /* Remove default margin */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212; /* Dark background */
+    color: #ffffff; /* Light text */
+    display: flex; /* Use Flexbox for centering */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+.container {
+    background-color: #1e1e1e; /* Darker container */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+    max-width: 400px; /* Reduced width for compactness */
+    width: 90%; /* Responsive width */
+}
+
+h1 {
+    color: #bb86fc; /* Lavender color */
+    font-size: 2.5em; /* Responsive heading size */
+}
+
+p {
+    color: #ffcc00;
+    font-size: 0.7em;
+}
+h2 {
+    color: #ffcc00; /* Gold color for section headings */
+    margin-top: 10px;
+    font-size: 1.2em; /* Responsive heading size */
+}
+
+.input-group {
+    margin: 15px 0; /* Spacing between input groups */
+}
+
+label {
+    font-size: 16px; /* Responsive label size */
+}
+
+input {
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    margin-top: 5px; /* Reduced margin */
+    border: none;
+    border-radius: 5px;
+    background-color: #444444; /* Darker input */
+    color: #ffffff; /* Light text in input */
+}
+
+button {
+    background-color: #bb86fc; /* Lavender color */
+    color: white;
+    padding: 10px 15px; /* Adjusted padding */
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px; /* Added margin for button */
+}
+
+button:hover {
+    background-color: #9a67d9; /* Darker lavender on hover */
+}
+
+/* Score Section Styles */
+.score-section, .meter-section, .message-section {
+    background-color: #333333; /* Darker background for sections */
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0; /* Reduced margin for compactness */
+}
+
+label, p {
+    font-size: 16px; /* Responsive text size */
+    margin-top: 5px; /* Reduced margin */
+}
+
+/* Meter styling */
+.meter-container {
+    margin: 15px 0;
+}
+
+.meter {
+    width: 180px; /* Adjusted width for responsiveness */
+    height: 80px; /* Adjusted height for responsiveness */
+    border: 5px solid #bb86fc; /* Lavender border */
+    border-bottom: none;
+    border-radius: 100px 100px 0 0;
+    position: relative;
+    margin: 0 auto;
+    background-color: #1e1e1e; /* Dark background */
+}
+
+.needle {
+    width: 8px; /* Adjusted needle width */
+    height: 70px; /* Adjusted needle height */
+    background-color: #ff4081; /* Bright pink needle */
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform-origin: bottom;
+    transform: rotate(0deg);
+    transition: transform 0.5s ease; /* Smooth transition */
+}
+
+/* Responsive Design */
+@media (max-width: 400px) {
+    .container {
+        width: 90%; /* Full width on smaller devices */
+    }
+
+    h1, h2 {
+        font-size: 1.2em; /* Adjusted font size for small screens */
+    }
+
+    button {
+        width: 100%; /* Full width button */
+    }
+}

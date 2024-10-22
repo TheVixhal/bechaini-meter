@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bechaini Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script src="{{ url_for('static', filename='js/meter.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Bechaini Meter</h1>
+        <p>Hey {{ name }}, your zodiac sign is <strong>{{ zodiac_sign }}</strong>.</p>
+
+        <!-- Score Section -->
+        <div class="score-section">
+            <h2>Your Bechaini Score</h2>
+            <p id="scoreDisplay"><strong id="score">Calculating...</strong></p>
+        </div>
+
+        <!-- Meter Section -->
+        <div class="meter-section">
+            <h2>Your Bechaini Meter</h2>
+            <div class="meter-container">
+                <div class="meter">
+                    <div class="needle" id="needle"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="message-section">
+            <h2>What It Means</h2>
+            <p id="message">Your score is being calculated. Please wait...</p>
+        </div>
+
+        <button onclick="location.href='/'">Try Again</button>
+    </div>
+
+    <script>
+        // Retrieve the actual score from the HTML
+        const actualScore = parseInt("{{ bechaini_score }}");
+
+        // Show "Calculating..." for 7 seconds
+        setTimeout(() => {
+            document.getElementById("score").textContent = actualScore; // Set actual score
+
+            // Display a funny roasting message based on the bechaini score
+            let message = '';
+            if (actualScore > 90) {
+                message = "Wow, you’re practically a zen master! Did you come from a different planet?";
+            } else if (actualScore > 80) {
+                message = "Mercury is definitely in retrograde! Are you sure you weren't born under a bad sign?";
+            } else if (actualScore > 70) {
+                message = "It's not too bad, but a chai break might help! Don't forget to add extra sugar!";
+            } else if (actualScore > 60) {
+                message = "You're in the chill zone! Did you just binge-watch a calming series?";
+            } else if (actualScore > 50) {
+                message = "You're unusually calm for today! Are you meditating or just too lazy to care?";
+            } else if (actualScore > 40) {
+                message = "Maybe you should try taking a walk? Nature has a way of grounding us!";
+            } else {
+                message = "Congrats! You've reached a new level of zen... or maybe just complete apathy! Let's check your pulse!";
+            }
+            document.getElementById("message").textContent = message;
+        }, 7000);
+
+        // Function to update the meter based on the bechaini score
+        setMeter(actualScore);
+    </script>
+</body>
+</html>
